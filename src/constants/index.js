@@ -3,9 +3,9 @@ const LOCAL_PETS = "localpets";
 const LOGIN_DATA = "loginx";
 
 const ROUTES = {
-  home: "/home",
+  home: "/",
   dashobard: "/dashboard",
-  login: "/",
+  login: "/login",
   about: "/about",
 };
 

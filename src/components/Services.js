@@ -28,7 +28,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-white p-4 max-w-7xl mx-auto">
+    <div className="bg-white p-4 py-8 max-w-7xl mx-auto">
       <h2 className="text-xl font-bold mb-4">Filter Services</h2>
       <div className="flex items-center mb-4">
         <div className="max-w-xs mx-auto">

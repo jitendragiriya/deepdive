@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextDatas } from "../context/mycontext";
 import { LOGIN_DATA, ROUTES } from "../constants";
+import Footer from "../components/Footer";
 
 const LoginPage = () => {
   const { isLoggedIn, setIsLoggedIn, email, setEmail } = ContextDatas();
@@ -30,7 +31,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="bg-gray-100 min-h-screen">
+      <div className="bg-gray-100 min-h-[calc(100vh-56px)]">
         {/* Header */}
         <header className="bg-white shadow">
           <div className="container mx-auto px-4 py-2 flex items-center justify-between">
@@ -120,8 +121,8 @@ const LoginPage = () => {
               </button>
             </form>
           </div>
-        </main>
-      </div>
+        </main> 
+      </div> 
     </>
   );
 };

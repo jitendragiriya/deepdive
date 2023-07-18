@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import PetForm from "../components/Pets";
+import Footer from "../components/Footer";
 
-const Dashboard = ( ) => {
+const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -26,23 +27,19 @@ const Dashboard = ( ) => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Header
-        toggleSidebar={toggleSidebar}
-        isOpen={isOpen} 
-      />
+      <Header toggleSidebar={toggleSidebar} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       {/* Main Content */}
       <div className="p-4 max-w-7xl mx-auto">
         <div className="bg-gray-100 min-h-screen">
-    
           <PetForm />
           {/* Header */}
           <div className="mx-auto px-4 py-2 flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
           </div>
           {/* Main Content */}
-          <main className="container mx-auto px-4 py-8">
+          <main className="container mx-auto py-8">
             {/* Statistics */}
             <section className="bg-white rounded-lg shadow p-4 mb-8">
               <h2 className="text-xl font-bold mb-4">Statistics</h2>
@@ -62,26 +59,28 @@ const Dashboard = ( ) => {
             {/* Recent Orders */}
             <section className="bg-white rounded-lg shadow p-4">
               <h2 className="text-xl font-bold mb-4">Recent Orders</h2>
-              <table className="w-full">
-                <thead>
-                  <tr>
-                    <th className="text-left py-2">Order ID</th>
-                    <th className="text-left py-2">Customer</th>
-                    <th className="text-left py-2">Product</th>
-                    <th className="text-left py-2">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {recentOrders.map((order) => (
-                    <tr key={order.id}>
-                      <td className="py-2">{order.id}</td>
-                      <td className="py-2">{order.customer}</td>
-                      <td className="py-2">{order.product}</td>
-                      <td className="py-2">{order.price}</td>
+              <div className="overflow-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="text-left py-2 min-w-[150px]">Order ID</th>
+                      <th className="text-left py-2 min-w-[150px]">Customer</th>
+                      <th className="text-left py-2 min-w-[150px]">Product</th>
+                      <th className="text-left py-2 min-w-[150px]">Price</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {recentOrders?.map((order) => (
+                      <tr key={order.id} className={""}>
+                        <td className="py-2">{order.id}</td>
+                        <td className="py-2">{order.customer}</td>
+                        <td className="py-2">{order.product}</td>
+                        <td className="py-2">{order.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </section>
           </main>
         </div>

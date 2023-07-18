@@ -76,7 +76,7 @@ const PetForm = () => {
         </div>
       </form>
 
-      <div className="max-w-7xl p-4 mx-auto mt-8">
+      <div className="max-w-7xl mx-auto mt-8">
         <h2 className="text-xl font-bold mb-4">Customer Pets</h2>
         {pets.length === 0 ? (
           <p>No pets found</p>
