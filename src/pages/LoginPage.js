@@ -95,6 +95,7 @@ const LoginPage = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={handleEmailChange}
+                  required={true}
                 />
               </div>
               <div className="mb-4">
@@ -111,6 +112,7 @@ const LoginPage = () => {
                   placeholder="Enter your password"
                   value={password}
                   onChange={handlePasswordChange}
+                  required={true}
                 />
               </div>
               <button
