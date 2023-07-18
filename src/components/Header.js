@@ -47,13 +47,13 @@ const Header = ({ isOpen, toggleSidebar }) => {
               </svg>
             </button>
             <Link to={ROUTES.home} className="text-xl font-bold text-gray-800">
-              Pet Dashboard
+              Dashboard
             </Link>
           </div>
           <div className="flex items-center">
             <input
               type="text"
-              className="px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-blue-500 focus:bg-white"
+              className="hidden md:block px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-blue-500 focus:bg-white"
               placeholder="Search"
             />
             <button
