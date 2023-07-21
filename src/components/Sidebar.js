@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../constants';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -9,7 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       } transition duration-300`}
     >
       <div className="flex items-center justify-between px-4 py-6">
-        <Link to={"/home"} className="text-2xl font-bold">Pet Dashboard</Link>
+        <Link to={ROUTES.home} className="text-2xl font-bold">Pet Dashboard</Link>
         <button
           className="text-gray-600 focus:outline-none"
           onClick={toggleSidebar}
