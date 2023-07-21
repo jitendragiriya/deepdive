@@ -5,9 +5,10 @@ import { ROUTES } from "../constants";
 import HomeHeader from "../components/HomeHeader";
 import axios from "axios";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const { isLoggedIn, setIsLoggedIn, email, setEmail } = ContextDatas();
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,7 +29,8 @@ const LoginPage = () => {
     await axios
       .post(
         "your_api_url",
-        { 
+        {
+          name,
           email,
           password,
         },
@@ -52,8 +54,27 @@ const LoginPage = () => {
         <main className="container mx-auto px-4 py-8">
           {/* Login Form */}
           <div className="max-w-md mx-auto bg-white rounded-lg shadow p-8">
-            <h2 className="text-2xl font-bold mb-4">Login</h2>
+            <h2 className="text-2xl font-bold mb-4">Register</h2>
             <form onSubmit={handleLogin}>
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="Enter your Name"
+                  value={name}
+                  onChange={(e) => setName(e?.target?.value)}
+                  required={true}
+                  minLength={3}
+                  maxLength={30}
+                />
+              </div>
               <div className="mb-4">
                 <label
                   htmlFor="email"
@@ -86,18 +107,20 @@ const LoginPage = () => {
                   value={password}
                   onChange={handlePasswordChange}
                   required={true}
+                  minLength={6}
+                  maxLength={30}
                 />
               </div>
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
               >
-                Login
+                Register
               </button>
               <div className="mt-4">
-                don't have an account?
-                <Link to={ROUTES.register} className="text-blue-500 ml-2">
-                  register
+                Already have an account?
+                <Link to={ROUTES.login} className="text-blue-500 ml-2">
+                  login
                 </Link>
               </div>
             </form>
@@ -108,4 +131,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

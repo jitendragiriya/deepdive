@@ -18,7 +18,11 @@ const HomeHeader = () => {
             &#9776;
           </button>
         </div>
-        <nav className={`md:flex ${isMenuOpen ? "h-40" : "h-0"} duration-150`}>
+        <nav
+          className={`md:flex ${
+            isMenuOpen ? "h-40" : "h-0"
+          } duration-150 md:items-center`}
+        >
           <Link
             to={ROUTES.dashobard}
             className="block md:inline-block mt-4 md:mt-0 text-white mr-4"
@@ -32,13 +36,13 @@ const HomeHeader = () => {
             Home
           </Link>
           <Link
-            to={ROUTES.about}
+            to={ROUTES.register}
             className="block md:inline-block mt-4 md:mt-0 text-white mr-4"
           >
-            About
+            Register
           </Link>
           <Link
-            to="/services"
+            to={ROUTES.services}
             className="block md:inline-block mt-4 md:mt-0 text-white"
           >
             Services
